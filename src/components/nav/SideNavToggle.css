@@ -1,0 +1,21 @@
+.toggle-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 24px;
+    width: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.toggle-side:focus {
+    outline: none;
+}
+
+.hamburger-line {
+    width: 30px;
+    height: 2px;
+    background: #f7f7f7;
+}

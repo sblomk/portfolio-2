@@ -1,0 +1,16 @@
+.projects-root { 
+    margin-top: 70px;
+    width: 100%;
+    display: flex;
+    background: #F9F9F9;
+    justify-content: center;
+}
+
+.projects-container {
+    width: 70%;
+    padding-top: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}

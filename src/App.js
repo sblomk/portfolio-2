@@ -1,26 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Home from './pages/Home'
+import About from './pages/About'
+import Projects from './pages/Projects'
+import Nav from './components/nav/Nav'
+import SideNav from './components/nav/SideNav'
+import Backdrop from './components/backdrop/Backdrop'
+import Footer from './components/nav/Footer'
+
+class App extends Component {
+  state = {
+    sideNav: false
+  }
+
+  sideNavToggleClickHandler = () => {
+    this.setState((prevState) => {
+      return {sideNav: !prevState.sideNav}
+    })
+  }
+
+  closeSideNav = () => {
+    this.setState({sideNav: false})
+  }
+
+  render() {
+    let backdrop
+
+    if (this.state.sideNav) {
+      backdrop = <Backdrop click={this.closeSideNav}/>
+    }
+    return(
+    <Router>
+      <div style={{height: '100%'}}>
+        <Nav sideNavClick={this.sideNavToggleClickHandler} />
+        <SideNav show={this.state.sideNav} close={this.closeSideNav}/>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/projects" component={Projects} />
+        </Switch>
+        {backdrop}
+        <Footer />
+      </div>
+    </Router>
+  )}
 }
 
 export default App;

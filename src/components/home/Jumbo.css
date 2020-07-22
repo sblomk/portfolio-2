@@ -1,0 +1,120 @@
+.jumbo {
+    width: 100%;
+    height: 92vh;
+    margin-top: 60px;
+    background: #F9F9F9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.jumbo-text {
+    width: 70%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.jumbo h1 {
+    letter-spacing: 1px;
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.jumbo h2 {
+    letter-spacing: 1px;
+    font-size: 2rem;
+    font-weight: 100;
+    line-height: 1.4;
+}
+
+.underline {
+    border-bottom: 3px solid #FF7835;
+    display: inline-block;
+    line-height: 0.85;
+}
+
+.ux{
+    animation: slide 0.8s ease both;
+}
+
+.research{
+    animation: slide 0.8s ease both;
+    animation-delay: 0.8s;
+}
+
+.frontend{
+    animation: slide 0.8s ease both;
+    animation-delay: 1.6s;
+}
+
+.jumbo-button-container {
+    width: 70%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.jumbo-linkedin {
+    width: 80px;
+    height: 80px;
+    margin-right: 10%;
+    filter: invert(86%) sepia(22%) saturate(4953%) hue-rotate(320deg) brightness(102%) contrast(101%);
+    animation: slide 1s ease both;
+    animation-delay: 2.4s;
+}
+
+.jumbo-email {
+    width: 77px;
+    height: 77px;
+    margin-right: 10%;
+    filter: invert(86%) sepia(22%) saturate(4953%) hue-rotate(320deg) brightness(102%) contrast(101%);
+    animation: slide 1s ease both;
+    animation-delay: 3s;
+}
+
+.arrow-container {
+    height: 18%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.down-arrow {
+    width: 50px;
+    height: 40px;
+    filter: invert(86%) sepia(22%) saturate(4953%) hue-rotate(320deg) brightness(102%) contrast(101%);
+    animation: drop 1.8s ease both;
+    animation-delay: 3.8s;
+}
+
+@media (max-width: 1076px) {
+    .jumbo-text {
+        align-items: center;
+    }
+    .jumbo h2{
+        font-size: 1.3rem;
+        text-align: center;
+    }
+    .jumbo h1{
+        text-align: center;
+    }
+    .underline {
+        border-bottom: 3px solid #FF7835;
+    }
+    .jumbo-button-container {
+        justify-content: space-evenly;
+    }
+    .jumbo-linkedin { 
+        margin-right: 0;
+    }
+    .jumbo-email {
+        margin-right: 0;
+    }
+}

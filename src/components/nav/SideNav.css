@@ -1,0 +1,41 @@
+.side-nav {
+    height: 100%;
+    background: #EDBF70;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70%;
+    z-index: 200;
+    transform: translateX(150%);
+    transition: transform 0.3s;
+}
+
+.side-nav.open {
+    transform: translateX(50%);
+}
+
+.side-nav ul {
+    height: 100%;
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.side-nav span{
+    color: #f7f7f7;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.side-nav span:hover{
+    color: grey;
+}
+
+@media (min-width: 1077px) {
+    .side-nav {
+        display: none;
+    }
+}
