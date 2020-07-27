@@ -9,7 +9,7 @@ export default function Current() {
                 <h1>CURRENTLY</h1>
                 <div className="current-work-content">
                     <div className="current-work-text">
-                        <h2>I'm doing my Master Thesis at <a href="https://www.deedster.com/" target="_blank"><span className="underline">Deedster!</span></a></h2>
+                        <h2>I've just completed my master thesis at <a href="https://www.deedster.com/" target="_blank"><span className="underline">Deedster</span></a> and is looking for new challenges!</h2>
                         <p>I'm working on how to increase user engagement with push notifications. My mission is to design push-strategies to enhance the User Experience to persuade and motivate increased engagement with the Deedster app. I will be conducting A/B testing and an engagement analysis from user behavioral data to determine an optimal strategy for their application.</p>
                     </div>
                     <div className="current-work-img">

@@ -9,7 +9,7 @@ export default function Jumbo() {
     return (
         <div className="jumbo" id="home">
             <div className="jumbo-text">
-                <h1>Hi! I'm Sebastian</h1><h2>I'm currently studying my last year at the Interactive Media Technology masters programme at KTH with a focus on <span className="ux"><span className="underline">UX Design</span>,</span> <span className="research"><span className="underline">User Research</span>,</span> <span className="frontend">and <span className="underline">Frontend Development</span>.</span></h2>
+                <h1>Hi! I'm Sebastian</h1><h2>I'm a Media Technology engineer with a masters degree in Interactive Media Technology from KTH. I'm mostly focused on <span className="ux"><span className="underline">UX Design</span>,</span> <span className="research"><span className="underline">User Research</span>,</span> <span className="frontend">and <span className="underline">Frontend Development</span>.</span></h2>
             </div>
             <div className="jumbo-button-container">
                 <a href="https://www.linkedin.com/in/sebastianblomkvist/" target="_blank" className="jumbo-linkedin">

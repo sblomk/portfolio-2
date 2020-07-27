@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import emailjs from 'emailjs-com';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 import './About.css'
 import EduIcon from '../img/education.svg'
 import Linkedin from '../img/linkedin.svg'
@@ -21,10 +24,39 @@ export default function About() {
         setMessage(e.target.value)
     }
 
-    const handleSubmit = (e) =>{
-        e.preventDefault()
-        console.log(name, email, message)
+    const sendMessage = (event) =>{
+        event.preventDefault()
+        const templateParams = {
+            from_name: name + " (" + email + ")",
+            to_name: "sebbeblomkvist@gmail.com",
+            feedback: message
+        }
+        emailjs.send("sebbeblomkvist_gmail_com", "portfolio_contact", templateParams, "user_R68NcwoJDXvDMLz7nD4W9")
+            .then((result) => {
+                console.log(result.text)
+                notifySuccess()
+            }, (error) => {
+                console.log(error.text)
+                notifyFail()
+        })
+        setName("")
+        setEmail("")
+        setMessage("")
     }
+
+    const notifySuccess = () => {
+        toast('Message Sent! I\'ll get back to you asap! ', {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
+    }
+    const notifyFail = () => toast("Something went wrong..");
+
 
     return (
         <div className="about-root" id="about">
@@ -97,7 +129,7 @@ export default function About() {
                         <p>If you're in a hurry, you can just send me a message below!</p>
                     </div>
                     <div className="form">
-                        <form id="contact-form" onSubmit={handleSubmit} method="POST">
+                        <form id="contact-form" onSubmit={sendMessage} method="POST">
                             <div className="form-group">
                                 <label htmlFor="name">Name</label>
                                 <input type="text" className="form-control" value={name} onChange={onNameChange}/>
@@ -115,6 +147,17 @@ export default function About() {
                     </div>
                 </div>
             </div>
+            <ToastContainer
+                position="bottom-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
         </div>
     )
 }
