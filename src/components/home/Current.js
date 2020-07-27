@@ -6,7 +6,7 @@ export default function Current() {
     return (
         <div className="current-root" id="current-work">
             <div className="current-work-container">
-                <h1>CURRENT WORK</h1>
+                <h1>CURRENTLY</h1>
                 <div className="current-work-content">
                     <div className="current-work-text">
                         <h2>I'm doing my Master Thesis at <a href="https://www.deedster.com/" target="_blank"><span className="underline">Deedster!</span></a></h2>

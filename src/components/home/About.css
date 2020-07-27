@@ -62,6 +62,24 @@
     padding-bottom: 50px;
 }
 
+.form-group {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.contact-info {
+    margin-bottom: 30px;
+}
+
+.contact-btn {
+    background-color: #FF7835;
+    border: none;
+    padding: 15px 32px;
+    margin-top: 20px;
+    color: #F9F9F9;
+}
+
 .education-icon {
     width: 100px;
     margin-right: 30px;

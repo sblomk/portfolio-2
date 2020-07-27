@@ -1,9 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './About.css'
 import EduIcon from '../img/education.svg'
 import Linkedin from '../img/linkedin.svg'
 
 export default function About() {
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [message, setMessage] = useState('')
+
+    const onNameChange = (e) => {
+        setName(e.target.value)
+        console.log(name)
+    }
+
+    const onEmailChange = (e) => {
+        setEmail(e.target.value)
+    }
+
+    const onMessageChange = (e) => {
+        setMessage(e.target.value)
+    }
+
+    const handleSubmit = (e) =>{
+        e.preventDefault()
+        console.log(name, email, message)
+    }
+
     return (
         <div className="about-root" id="about">
             <div className="about-container">
@@ -73,6 +95,23 @@ export default function About() {
                     <div className="contact-info">
                         <p>You can add me on <a href="https://www.linkedin.com/in/sebastianblomkvist/" target="_blank" className="linkedin-link"><span className="underline">Linked</span><img src={Linkedin} alt="Linkedin" className="contact-linkedin"/></a> or send me an email at <span className="underline">sebastian@blomkvists.com</span>.</p>
                         <p>If you're in a hurry, you can just send me a message below!</p>
+                    </div>
+                    <div className="form">
+                        <form id="contact-form" onSubmit={handleSubmit} method="POST">
+                            <div className="form-group">
+                                <label htmlFor="name">Name</label>
+                                <input type="text" className="form-control" value={name} onChange={onNameChange}/>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="exampleInputEmail1">Email address</label>
+                                <input type="email" className="form-control" aria-describedby="emailHelp" value={email} onChange={onEmailChange}/>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="message">Message</label>
+                                <textarea className="form-control" rows="5" value={message} onChange={onMessageChange}></textarea>
+                            </div>
+                            <button type="submit" className="contact-btn">Send</button>
+                        </form>
                     </div>
                 </div>
             </div>
