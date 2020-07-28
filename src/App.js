@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css';
 
+import ProjectDetails from './pages/ProjectDetails'
 import Home from './pages/Home'
-import About from './pages/About'
-import Projects from './pages/Projects'
 import Nav from './components/nav/Nav'
 import SideNav from './components/nav/SideNav'
 import Backdrop from './components/backdrop/Backdrop'
@@ -38,8 +37,7 @@ class App extends Component {
         <SideNav show={this.state.sideNav} close={this.closeSideNav}/>
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/projects" component={Projects} />
+          <Route path="/projects/:id" component={ProjectDetails} />
         </Switch>
         {backdrop}
         <Footer />
