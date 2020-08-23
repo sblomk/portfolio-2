@@ -3,11 +3,14 @@ import {Link} from 'react-router-dom'
 import './ProjectCard.css'
 import RunningLogo from '../img/spotifyRunning.jpg'
 import VeloLogo from '../img/veloIcon.png'
+import CarbonBudget from '../img/carbonSite.png'
 
 function ProjectCard(props) {
     let pic
     if (props.name === "Spotify Running"){
         pic = RunningLogo
+    } else if (props.name === "Carbon Budgets"){
+        pic = CarbonBudget
     } else {
         pic = VeloLogo
     }
@@ -20,7 +23,7 @@ function ProjectCard(props) {
                     </div>
                     <div className="summary-container">
                         <h2>{props.name}</h2>
-                        <p>awddddddddddddddd awddddddddddddddd </p>
+                        <p>{props.desc}</p>
                     </div>
                 </div>
             </Link>
